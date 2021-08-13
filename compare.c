@@ -32,7 +32,7 @@ TH1D* GetHistogram(const string fileName, const string histName, double liveTime
     //if (i > t1->GetEntries() - 20) cout << setprecision(12)<< "last few timestamps" << EventTime << endl;
   }
 
-  h->Scale(1./liveTime/600./0.6); //0.6 kg is the mass
+  h->Scale(1./liveTime/3./0.6); //0.6 kg is the mass
 
   return h;
 }
@@ -78,7 +78,7 @@ void compare() {
   h_r19->GetXaxis()->SetTitle("keV");
   h_r19->GetYaxis()->SetTitle("dru: event/kg/keV/day");
  
-  h_r19->GetYaxis()->SetRangeUser(0, 50);
+  h_r19->GetYaxis()->SetRangeUser(0, 10000);
   //h_r19->GetYaxis()->SetRangeUser(1e-3, 1000);
   h_r19->SetTitle("High Rate Ba @ CUTE");
   h_r19->Draw("hist c");
